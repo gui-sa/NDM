@@ -1,0 +1,16 @@
+version: '2.15'
+services:
+    postgresdb:
+        image: postgres
+        ports:
+            - 5432:5432
+        environment:
+            - POSTGRES_PASSWORD=password
+            - POSTGRES_USER=admin
+        volumes:
+            - .dbData:/var/lib/postgresql/data
+    adminer:
+        image: adminer
+        ports:
+            - 8080:8080
+        restart: always
