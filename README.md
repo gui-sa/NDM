@@ -13,9 +13,9 @@ Aguarde o servidor do banco de dados estabilizar. \
 cd frontend/page
 ~~~
 ~~~
-docker build -t frontGSA:1.0.0 .
+docker build -t frontgsa:1.0.0 .
 ~~~
 ~~~
-docker run --name frontReact -d -p 3000:3000 -v $(pwd)/src:/app/src frontGSA:1.0.0
+docker run --name frontreact -d -p 3000:3000 -v $(pwd)/src:/app/src frontgsa:1.0.0
 ~~~
 Espere o servidor estabilizar e entre na [página WEB (dev)](http://localhost:3000/)
