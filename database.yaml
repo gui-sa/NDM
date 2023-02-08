@@ -7,8 +7,7 @@ services:
         environment:
             - POSTGRES_PASSWORD=password
             - POSTGRES_USER=admin
-        volumes:
-            - .dbData:/var/lib/postgresql/data
+            
     adminer:
         image: adminer
         ports:
