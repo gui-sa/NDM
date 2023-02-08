@@ -37,3 +37,5 @@ docker build -t frontgsa:1.0.0 .
 docker run --name frontreact -d -p 3000:3000 -v $(pwd)/src:/app/src frontgsa:1.0.0
 ~~~
 Espere o servidor estabilizar e entre na [página WEB (dev)](http://localhost:3000/)
+
+### Desativando e excluindo os containers:
