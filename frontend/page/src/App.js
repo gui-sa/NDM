@@ -9,9 +9,6 @@ function App() {
   return (
     <div className='App'>
       <Router>
-        <div className='gradient_bg'>
-          <Navbar />
-        </div>
         <Routes>
           <Route path='/overview' element={<Overview/>}/>
           <Route path='/' element={<Home/>}/>

@@ -7,10 +7,10 @@ import './navbar.css';
 const Menu = () => {
   return (
     <>
-      <p><Link to="/">Home</Link></p>
-      <p><Link to="/times">Times</Link></p>
-      <p><Link to="/jogadores">Jogadores</Link></p>
-      <p><Link to="/overview">Overview</Link></p>
+      <p ><Link to="/">Home</Link></p>
+      <p ><Link to="/times">Times</Link></p>
+      <p ><Link to="/jogadores">Jogadores</Link></p>
+      <p ><Link to="/overview">Overview</Link></p>
     </>
   )
 }
@@ -23,7 +23,7 @@ const Navbar = () => {
     <div className='sport__navbar'>
       <div className='sport__navbar-branding'>
         <div className='sport_navbar-branding-logo'>
-          <img src="https://source.unsplash.com/64x64/?Soccer" alt="Logo" />
+          <img src="https://source.unsplash.com/64x64/?ESport" alt="Logo" />
         </div>
         <p> E-Sports </p>
       </div>
