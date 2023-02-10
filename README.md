@@ -9,33 +9,25 @@ Entretando, na pasta, todos os códigos estão a mostra. As imagens do docker ro
 ## Orientações via DOCKER:
 1) Dentro da pasta do arquivo abra um terminal de comandos e rode:
 ~~~
-docker compose -f database.yaml up
-~~~
-Aguarde o servidor do banco de dados estabilizar. /
-
-2) Vá até a pasta 'backend', contrua a imagem do docker do backend e crie seu container.
-~~~
-cd backend
+docker build -t backendgsa:1.0.0 ./backend/
 ~~~
 ~~~
-docker build -t backendgsa:1.0.0 .
+docker build -t frontgsa:1.0.0 ./frontend/page/
 ~~~
 ~~~
-docker run --name backnode -d -p 5000:5000 -v $(pwd)/src:/app/src backendgsa:1.0.0
+docker compose -f app.yaml up
 ~~~
-
-Retorne até o diretorio raiz deste repositorio (/NDM) /
-
-3) Vá até a pasta 'page' , contrua a imagem do docker do front e crie seu container.
-~~~
-cd frontend/page
-~~~
-~~~
-docker build -t frontgsa:1.0.0 .
-~~~
-~~~
-docker run --name frontreact -d -p 3000:3000 -v $(pwd)/src:/app/src frontgsa:1.0.0
-~~~
-Espere o servidor estabilizar e entre na [página WEB (dev)](http://localhost:3000/)
+Aguarde os servidores estabilizar e entre na [página WEB (dev)](http://localhost:3000/)
 
 ### Desativando e excluindo os containers:
+~~~
+docker compose -f app.yaml down
+~~~
+~~~
+docker rmi frontgsa:1.0.0
+~~~
+~~~
+docker rmi backendgsa:1.0.0
+~~~
+### Observação:
+As variaveis de ambiente (.env) foram comitadas para demonstrar os passos como um todo (assim como suas presença no app.yaml). Porém, na pratica, essas variaveis de ambientes seriam omitidas.

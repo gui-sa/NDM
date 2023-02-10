@@ -1,0 +1,32 @@
+version: '2.15'
+services:
+    postgresdb:
+        image: postgres
+        ports:
+            - 5432:5432
+        environment:
+            - POSTGRES_PASSWORD=password
+            - POSTGRES_USER=admin
+            - POSTGRES_DB=esport
+            
+    adminer:
+        image: adminer
+        ports:
+            - 8080:8080
+        restart: always
+    
+    backnode:
+        image: backendgsa:1.0.0
+        ports:
+            - 5000:5000
+        restart: always
+        volumes:
+            - ./backend/src:/app/src
+
+    frontreact:
+        image: frontgsa:1.0.0
+        ports:
+            - 3000:3000
+        restart: always
+        volumes:
+            - ./frontend/page/src:/app/src

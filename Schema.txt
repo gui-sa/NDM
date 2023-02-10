@@ -1,0 +1,2 @@
+time(id*,nome);
+jogador (id*, nome, idade, time_id(time.id));
