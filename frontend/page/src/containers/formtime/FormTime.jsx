@@ -6,8 +6,6 @@ const FormTime = ({value}) => {
 
   const handleSubmit = (event) =>{
     event.preventDefault();
-    console.log("Enviando Formulario para o backend");
-    console.log(nome);
     setNome("");
   };
 
