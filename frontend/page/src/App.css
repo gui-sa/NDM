@@ -34,6 +34,13 @@ a {
     background:radial-gradient(circle at 6% 5%, rgba(49, 11, 113, 0.73) 4%, rgba(46, 0, 0, 0.73) 21%, rgba(0, 0, 0, 0.73) 100%);
 }
 
+.sport__classic-page{
+    color:#ffffff;
+}
+
+.classic__background{
+    border-bottom: solid #ffffff 3px;
+}
 
 @media screen and (max-width: 550px) {
     body{
@@ -41,4 +48,22 @@ a {
         margin: 0 auto;
     }
 
+}
+
+.classic__table{
+    margin: 3vh;
+}
+
+.classic__table table{
+    width:60%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.classic__table table,
+.classic__table td,
+.classic__table th {
+    border: 2px solid #fff;
+    text-align: center;
+    padding: .5vh 0;
 }

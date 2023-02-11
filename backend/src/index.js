@@ -1,6 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 app.use(express.json()); //Setting up midleware
+app.use(cors());
 const PORT = 5000;
 require('dotenv').config();
 const { Pool } = require('pg');

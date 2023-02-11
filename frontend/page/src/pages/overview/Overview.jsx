@@ -1,15 +1,17 @@
 import React from 'react'
 import './overview.css'
-import { Article, Brand, CTA, Navbar, Feature } from '../../components';
-import { Features, Footer, Feed, Header } from '../../containers';
+import { Navbar } from '../../components';
+import { Footer, OverTable } from '../../containers';
 
 function Overview() {
   return (
-    <div >
-      <div className='gradient_bg'>
+    <div className='sport__classic-page'>
+      <div className='classic__background'>
         <Navbar />
       </div>
       <h1>Overview</h1>
+      <OverTable/>
+      <Footer/>
     </div>
   )
 }
