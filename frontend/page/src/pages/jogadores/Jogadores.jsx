@@ -5,11 +5,12 @@ import { Features, Footer, Feed, Header } from '../../containers';
 
 function Jogadores() {
   return (
-    <div >
-      <div className='gradient_bg'>
+    <div className='sport__classic-page'>
+      <div className='classic__background'>
           <Navbar />
       </div>
       <h1>Jogadores</h1>
+      <Footer/>
     </div>
 )}
 

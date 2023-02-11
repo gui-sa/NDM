@@ -23,7 +23,7 @@ Naturalmente as credenciais ficam em variaveis de ambientes e não devem ser mos
 Para [configurar o banco de dados](http://localhost:8080/):
 -   Postgresql
 -   user: admin
--   senha: password
+-   senha: password /
 Ao entrar clique no banco de dados 'esport', em seguida em 'Comando SQL' e execute os comandos que estão nos arquivos [DDL.sql](https://github.com/gui-sa/NDM/blob/main/DDL.sql) e [DML-examples.sql](https://github.com/gui-sa/NDM/blob/main/DML-examples.sql). \
 Os comandos DML-examples serve apenas para demonstrações posteriores. \
 
