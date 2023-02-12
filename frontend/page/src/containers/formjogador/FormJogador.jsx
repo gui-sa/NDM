@@ -1,4 +1,4 @@
-import { React, useState} from 'react';
+import { React, useState, useEffect} from 'react';
 import './formjogador.css';
 import axios from  'axios';
 
@@ -6,6 +6,7 @@ const FormJogador = ({value}) => {
   const [nome, setNome ] = useState(value ? value.nome : "");
   const [idade, setIdade ] = useState(value ? value.idade : 5);
   const [time, setTime ] = useState(value ? value.time : 1);
+  const [data, setData ] = useState([]);
 
   const handleSubmit = (event) =>{
     event.preventDefault();
@@ -24,6 +25,18 @@ const FormJogador = ({value}) => {
     setIdade(5);
     setTime(1);
   };
+
+  const fetchData = ()=>{
+    axios.get("http://localhost:5000/time")
+      .then((res)=>{
+        setData(res.data);
+        console.log(res.data);
+      }) 
+  }
+
+  useEffect(()=>{
+    fetchData();
+  },[])
 
   const handleNome = (e)=>{
     setNome(e.target.value);
@@ -56,14 +69,15 @@ const FormJogador = ({value}) => {
           onChange={ handleIdade }
           value={idade}  />
         </label>
-        
         <label>
           <p>Time:</p>
-          <input type="number"
-          min={0}
-          step={1}
-          onChange={ handleTime }
-          value={time}  />
+          <select value={time} onChange={ handleTime }>
+            {data.map((value,key)=>{
+              return(
+                <option value={value.id}>{value.nome}</option>
+              )
+            })}
+          </select>
         </label>
         <input type="submit" value="Criar" />
       </form>
