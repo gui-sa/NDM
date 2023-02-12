@@ -19,7 +19,7 @@ const pool = new Pool({
 app.post("/time", async (req,res)=>{
     try{
       const query_sql = `insert into time(nome) values ('${req.body.nome}')`;
-      const {rows} = await pool.query(query_sql);
+      const {info} = await pool.query(query_sql);
       return res.status(200).send(true);
     }catch(err){
       return res.status(400).send(err);
@@ -38,9 +38,16 @@ app.get("/time", async (req,res)=>{
 
 app.post("/jogador", async (req,res)=>{
   try{
-    const query_sql = `insert into jogador(nome,idade,time_id) values ('${req.body.nome}',${req.body.idade},${req.body.time_id})`;
-    const {rows} = await pool.query(query_sql);
-    return res.status(200).send(true);
+    const query_sql = `select count(*) from time,jogador where (time.id=jogador.time_id and time.id=${req.body.time_id})`;
+    const obStrange = await pool.query(query_sql);
+    count = JSON.parse(JSON.stringify(obStrange)).rows[0].count;
+    if(count < 5){
+      const query_sql2 = `insert into jogador(nome,idade,time_id) values ('${req.body.nome}',${req.body.idade},${req.body.time_id})`;
+      const info = await pool.query(query_sql2);
+      return res.status(200).send(true);
+    }else{
+      return res.status(200).send(false);
+    }
   }catch(err){
     return res.status(400).send(err);
   }
