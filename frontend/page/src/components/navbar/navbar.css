@@ -131,10 +131,12 @@
         display:none;
     }
     .sport_navbar-links_menu{
-        display: block;
+        display: flex;
         margin: 0;
         padding: 1vh;
-        
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
     }
 
 }
