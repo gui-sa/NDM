@@ -170,6 +170,7 @@ input[type=number] {
     border: 2px solid #61dafb;
 }
 
+.classic-select:hover,
 .classic__button:hover,
 .classic__textbox:hover{
     border: 2px solid #61dafb;
