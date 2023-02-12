@@ -10,10 +10,10 @@ const FormTime = ({value}) => {
     axios.post('http://localhost:5000/time', {
       nome: nome
     })
-      .then(function (response) {
-        console.log(response);
+      .then((response) => {
+        console.log(response.data);
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log(error);
       });
     setNome("");

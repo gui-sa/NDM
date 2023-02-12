@@ -1,7 +1,7 @@
 import React from 'react'
 import './jogadores.css'
-import { Article, Brand, CTA, Navbar, Feature } from '../../components';
-import { Features, Footer, Feed, Header } from '../../containers';
+import { Navbar } from '../../components';
+import { Footer, FormJogador } from '../../containers';
 
 function Jogadores() {
   return (
@@ -9,7 +9,8 @@ function Jogadores() {
       <div className='classic__background'>
           <Navbar />
       </div>
-      <h1>Jogadores</h1>
+      <h1>Cadastrar de Jogador</h1>
+      <FormJogador/>
       <Footer/>
     </div>
 )}

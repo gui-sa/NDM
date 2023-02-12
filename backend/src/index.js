@@ -20,18 +20,36 @@ app.post("/time", async (req,res)=>{
     try{
       const query_sql = `insert into time(nome) values ('${req.body.nome}')`;
       const {rows} = await pool.query(query_sql);
-      console.log("RECEBIDO COM SUCESSO");
       return res.status(200).send(true);
     }catch(err){
       return res.status(400).send(err);
     }
 });
 
+app.get("/time", async (req,res)=>{
+  try{
+    const query_sql = `select * from time`;
+    const {rows} = await pool.query(query_sql);
+    return res.status(200).send(rows);
+  }catch(err){
+    return res.status(400).send(err);
+  }
+});
+
 app.post("/jogador", async (req,res)=>{
   try{
-    const query_sql = `insert into jogador(id,nome,idade,time_id) values (101,'Miracle da SHOPEE',22,4)`;
+    const query_sql = `insert into jogador(nome,idade,time_id) values ('${req.body.nome}',${req.body.idade},${req.body.time_id})`;
     const {rows} = await pool.query(query_sql);
-    console.log(rows);
+    return res.status(200).send(true);
+  }catch(err){
+    return res.status(400).send(err);
+  }
+});
+
+app.get("/jogador", async (req,res)=>{
+  try{
+    const query_sql = `select * from jogador`;
+    const {rows} = await pool.query(query_sql);
     return res.status(200).send(rows);
   }catch(err){
     return res.status(400).send(err);
@@ -42,7 +60,6 @@ app.get("/overview", async (req,res)=>{
   try{
     const query_sql = `SELECT jogador.nome as jogador, time.nome as time FROM jogador,time where (jogador.time_id=time.id)`;
     const {rows} = await pool.query(query_sql);
-    console.log(rows);
     return res.status(200).send(rows);
   }catch(err){
     return res.status(400).send(err);
