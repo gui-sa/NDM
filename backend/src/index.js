@@ -16,20 +16,20 @@ const pool = new Pool({
   database: process.env.POSTGRES_DATABASE,
 });
 
-app.get("/time", async (req,res)=>{
+app.post("/time", async (req,res)=>{
     try{
-      const query_sql = `SELECT * FROM time`;
+      const query_sql = `insert into time(nome) values ('${req.body.nome}')`;
       const {rows} = await pool.query(query_sql);
-      console.log(rows);
-      return res.status(200).send(rows);
+      console.log("RECEBIDO COM SUCESSO");
+      return res.status(200).send(true);
     }catch(err){
       return res.status(400).send(err);
     }
 });
 
-app.get("/jogador", async (req,res)=>{
+app.post("/jogador", async (req,res)=>{
   try{
-    const query_sql = `SELECT * FROM jogador`;
+    const query_sql = `insert into jogador(id,nome,idade,time_id) values (101,'Miracle da SHOPEE',22,4)`;
     const {rows} = await pool.query(query_sql);
     console.log(rows);
     return res.status(200).send(rows);
@@ -40,7 +40,7 @@ app.get("/jogador", async (req,res)=>{
 
 app.get("/overview", async (req,res)=>{
   try{
-    const query_sql = `SELECT jogador.nome as jogador, time.nome as time FROM jogador,time`;
+    const query_sql = `SELECT jogador.nome as jogador, time.nome as time FROM jogador,time where (jogador.time_id=time.id)`;
     const {rows} = await pool.query(query_sql);
     console.log(rows);
     return res.status(200).send(rows);
@@ -48,5 +48,7 @@ app.get("/overview", async (req,res)=>{
     return res.status(400).send(err);
   }
 });
+
+
 
 app.listen(5000, ()=>{console.log(`Server Started on http://localhost:${PORT}`)});

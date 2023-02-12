@@ -1,11 +1,21 @@
 import { React, useState} from 'react';
 import './formtime.css';
+import axios from  'axios';
 
 const FormTime = ({value}) => {
   const [nome, setNome ] = useState(value ? value.nome : "");
 
   const handleSubmit = (event) =>{
     event.preventDefault();
+    axios.post('http://localhost:5000/time', {
+      nome: nome
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     setNome("");
   };
 
