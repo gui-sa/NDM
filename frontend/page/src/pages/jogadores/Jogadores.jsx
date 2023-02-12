@@ -9,7 +9,7 @@ function Jogadores() {
       <div className='classic__background'>
           <Navbar />
       </div>
-      <h1>Cadastrar de Jogador</h1>
+      <h1>Cadastro de Jogadores</h1>
       <FormJogador/>
       <Footer/>
     </div>

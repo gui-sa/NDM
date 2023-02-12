@@ -51,11 +51,12 @@ const FormJogador = ({value}) => {
 
 
   return (
-    <div>
+    <div className='classic__form'>
       <form onSubmit={ handleSubmit }>
         <label>
           <p>Nome:</p>
-          <input type="text" 
+          <input className='classic__textbox' 
+          type="text" 
           placeholder="Digite o nome do Jogador"
           onChange={ handleNome }
           value={nome}  />
@@ -78,7 +79,9 @@ const FormJogador = ({value}) => {
             })}
           </select>
         </label>
-        <input type="submit" value="Criar" />
+        <input className='classic__button'
+        type="submit" 
+        value="Cadastrar" />
       </form>
     </div>
   )

@@ -7,29 +7,36 @@ const FormTime = ({value}) => {
 
   const handleSubmit = (event) =>{
     event.preventDefault();
-    axios.post('http://localhost:5000/time', {
-      nome: nome
-    })
-      .then((response) => {
-        console.log(response.data);
+    if (nome === ""){
+
+    }else{
+      axios.post('http://localhost:5000/time', {
+        nome: nome
       })
-      .catch((error) => {
-        console.log(error);
-      });
-    setNome("");
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      setNome("");
+    }
   };
 
   return (
-    <div>
+    <div className='classic__form'>
       <form onSubmit={ handleSubmit }>
         <label htmlFor="nome">
           <p>Nome:</p>
-          <input type="text" 
+          <input className='classic__textbox'
+          type="text" 
           placeholder="Digite o nome do time"
           onChange={ (e)=> setNome(e.target.value)}
           value={nome}  />
         </label>
-        <input type="submit" value="Criar" />
+        <input className='classic__button'
+        type="submit" 
+        value="Cadastrar" />
 
 
       </form>

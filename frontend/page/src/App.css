@@ -19,6 +19,11 @@ a {
     text-decoration: none;
 }
 
+::placeholder {
+    color: #fff;    
+    font-weight:100;
+}
+
 .gradient_bg{
     /* ff 3.6+ */
     background:-moz-radial-gradient(circle at 6% 5%, rgba(49, 11, 113, 0.73) 4%, rgba(46, 0, 0, 0.73) 21%, rgba(0, 0, 0, 0.73) 100%);
@@ -38,6 +43,11 @@ a {
 
 .sport__classic-page{
     color:#ffffff;
+}
+
+.sport__classic-page h1{
+    font-size: 4vh;
+    margin: 2vh 0 0 2vh;
 }
 
 .classic__background{
@@ -61,6 +71,65 @@ a {
     border: 2px solid #fff;
     text-align: center;
     padding: .5vh 0;
+}
+
+.classic__form{
+    width:60%;
+    margin: 5vh auto;
+    padding: 2vh;
+    border: 2px solid #fff;
+}
+
+.classic__form form label p{
+    font-size: 3vh;
+    letter-spacing: 2px;
+    padding: 1vh;
+}
+
+.classic__textbox{
+    color: #61dafb; 
+    font-weight:800;
+    border: 2px solid #fff;
+    border-radius:1vh;
+    width:100%;
+    padding: 1vh;
+    background: rgba(39,87,100,0.5);
+}
+
+.classic__textbox:hover{
+    border: 2px solid #61dafb;
+}
+
+
+.classic__textbox:focus {
+    outline: none;
+    border: 2px solid #61dafb;
+
+}
+
+.classic__button{
+    color: #fff;
+    font-size: 2vh;
+    letter-spacing: 2px;
+    display: block;
+    width: 30vw;
+    margin: 3vh auto;
+    padding: 3vh;
+    border: 2px solid #fff;
+    border-radius: 3vh;
+    background: transparent;
+}
+
+.classic__button:hover,
+.classic__textbox:hover{
+    border: 2px solid #61dafb;
+    color: #61dafb;
+}
+
+.classic__button:active,
+.classic__textbox:focus {
+    outline: none;
+    border: 2px solid #61dafb;
 }
 
 @media screen and (max-width: 550px) {
