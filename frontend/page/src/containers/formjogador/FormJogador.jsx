@@ -30,7 +30,6 @@ const FormJogador = ({value}) => {
     axios.get("http://localhost:5000/time")
       .then((res)=>{
         setData(res.data);
-        console.log(res.data);
       }) 
   }
 
@@ -74,7 +73,7 @@ const FormJogador = ({value}) => {
           <select value={time} onChange={ handleTime }>
             {data.map((value,key)=>{
               return(
-                <option value={value.id}>{value.nome}</option>
+                <option key={key} value={value.id}>{value.nome}</option>
               )
             })}
           </select>
