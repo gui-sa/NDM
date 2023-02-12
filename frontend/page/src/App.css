@@ -19,6 +19,17 @@ a {
     text-decoration: none;
 }
 
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 ::placeholder {
     color: #fff;    
     font-weight:100;
@@ -57,12 +68,14 @@ a {
 
 .classic__table{
     margin: 3vh;
+    
 }
 
 .classic__table table{
     width:60%;
     margin: auto;
     border-collapse: collapse;
+    background: rgba(0,0,0,0.8);
 }
 
 .classic__table table,
@@ -70,7 +83,7 @@ a {
 .classic__table th {
     border: 2px solid #fff;
     text-align: center;
-    padding: .5vh 0;
+    padding: 1vh 0;
 }
 
 .classic__form{
@@ -78,6 +91,8 @@ a {
     margin: 5vh auto;
     padding: 2vh;
     border: 2px solid #fff;
+    border-radius: 3vh;
+    background: rgba(0,0,0,0.8)
 }
 
 .classic__form form label p{
@@ -96,10 +111,10 @@ a {
     background: rgba(39,87,100,0.5);
 }
 
+
 .classic__textbox:hover{
     border: 2px solid #61dafb;
 }
-
 
 .classic__textbox:focus {
     outline: none;
@@ -118,6 +133,30 @@ a {
     border: 2px solid #fff;
     border-radius: 3vh;
     background: transparent;
+    text-align:center;
+
+}
+
+.classic-select{
+    color: #61dafb; 
+    font-weight:800;
+    border: 2px solid #fff;
+    border-radius:1vh;
+    width:100%;
+    padding: 1vh;
+    background: rgba(39,87,100,0.5);
+    /* Remove estilo padrão do Chrome */
+    -webkit-appearance: none;
+    /* Remove estilo padrão do FireFox */
+    -moz-appearance: none;
+    appearance: none;
+}
+.classic-select:focus{
+    background: #000;
+    color: #61dafb;
+    font-weight:800;
+    outline: none;
+    border: 2px solid #61dafb;
 }
 
 .classic__button:hover,
@@ -132,6 +171,9 @@ a {
     border: 2px solid #61dafb;
 }
 
+
+
+
 @media screen and (max-width: 550px) {
     body{
         width: 90%;
@@ -141,6 +183,21 @@ a {
         width:90%;
         margin: auto;
         border-collapse: collapse;
+    }
+    .classic__form{
+        width:100%;
+        border: 0 solid #fff;
+    }
+    .classic__button{
+        letter-spacing: 0px;
+        text-align:center;
+        display: block;
+        width: 80%;
+        margin: 3vh auto;
+        padding: 3vh;
+        border: 2px solid #fff;
+        border-radius: 3vh;
+        background: transparent;
     }
     
 }

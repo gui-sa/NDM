@@ -59,19 +59,25 @@ const FormJogador = ({value}) => {
           type="text" 
           placeholder="Digite o nome do Jogador"
           onChange={ handleNome }
+          required
           value={nome}  />
         </label>
         <label>
           <p>Idade:</p>
-          <input type="number"
+          <input className='classic__textbox'
+          type="number"
           min={5}
           step={1}
           onChange={ handleIdade }
+          required
           value={idade}  />
         </label>
         <label>
           <p>Time:</p>
-          <select value={time} onChange={ handleTime }>
+          <select className='classic-select'
+          value={time} 
+          required
+          onChange={ handleTime }>
             {data.map((value,key)=>{
               return(
                 <option key={key} value={value.id}>{value.nome}</option>

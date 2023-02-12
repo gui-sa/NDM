@@ -32,6 +32,7 @@ const FormTime = ({value}) => {
           type="text" 
           placeholder="Digite o nome do time"
           onChange={ (e)=> setNome(e.target.value)}
+          required
           value={nome}  />
         </label>
         <input className='classic__button'
