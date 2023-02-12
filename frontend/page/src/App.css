@@ -34,6 +34,12 @@ input[type=number] {
     color: #fff;    
     font-weight:100;
 }
+.gradient__Text{
+    background: linear-gradient(90deg, rgba(0, 255, 191, 1) 0%, rgba(76, 0, 255, 1) 49%, rgba(212, 0, 0, 1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 .gradient_bg{
     /* ff 3.6+ */

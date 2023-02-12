@@ -1,0 +1,29 @@
+.sport__header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 3vh;
+}
+
+.sport__header h1{
+    margin: 3vh;
+}
+
+.sport__header-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.sport__header-description{
+    margin: 0 ;
+    padding: 3vh;
+    text-align:left;
+    text-indent: 5vh;
+    line-height: 150%;
+
+}
+
+.sport__header-description a{
+    line-height: 300%;
+    padding: 5vh;
+}
