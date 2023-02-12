@@ -6,13 +6,16 @@ import { Footer, FormJogador } from '../../containers';
 function Jogadores() {
   return (
     <div className='sport__classic-page'>
-      <div className='classic__background'>
+      <div>
+        <div className='classic__background'>
           <Navbar />
+        </div>
+        <h1>Cadastro de Jogadores</h1>
+        <FormJogador />
       </div>
-      <h1>Cadastro de Jogadores</h1>
-      <FormJogador/>
-      <Footer/>
+      <Footer />
     </div>
-)}
+  )
+}
 
 export default Jogadores

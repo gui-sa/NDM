@@ -50,9 +50,14 @@ input[type=number] {
 
     /* global 92%+ browsers support */
     background:radial-gradient(circle at 6% 5%, rgba(49, 11, 113, 0.73) 4%, rgba(46, 0, 0, 0.73) 21%, rgba(0, 0, 0, 0.73) 100%);
+    
 }
 
 .sport__classic-page{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:100vh;
     color:#ffffff;
 }
 

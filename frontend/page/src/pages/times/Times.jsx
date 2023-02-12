@@ -6,12 +6,14 @@ import { Features, Footer, Feed, Header, FormTime } from '../../containers';
 function Times() {
   return (
     <div className='sport__classic-page'>
-      <div className='classic__background'>
-        <Navbar />
+      <div>
+        <div className='classic__background'>
+          <Navbar />
+        </div>
+        <h1>Cadastro de Times</h1>
+        <FormTime />
       </div>
-      <h1>Cadastro de Times</h1>
-      <FormTime/>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

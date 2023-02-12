@@ -1,0 +1,16 @@
+.sport__footer{
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 3vh;
+    background: rgba(0,0,0,0.8);
+}
+.sport__footer-address{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

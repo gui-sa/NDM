@@ -6,12 +6,14 @@ import { Footer, OverTable } from '../../containers';
 function Overview() {
   return (
     <div className='sport__classic-page'>
-      <div className='classic__background'>
-        <Navbar />
+      <div>
+        <div className='classic__background'>
+          <Navbar />
+        </div>
+        <h1>Overview</h1>
+        <OverTable />
       </div>
-      <h1>Overview</h1>
-      <OverTable/>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
