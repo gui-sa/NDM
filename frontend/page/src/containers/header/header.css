@@ -10,11 +10,13 @@
 }
 
 .sport__header-container{
+    width:100%;
     display: flex;
     flex-direction: row;
 }
 
 .sport__header-description{
+    width:35vw;
     margin: 0 ;
     padding: 3vh;
     text-align:left;
@@ -26,4 +28,27 @@
 .sport__header-description a{
     line-height: 300%;
     padding: 5vh;
+}
+
+.sport__header-animation,
+.sport__header-animation img{
+    width:35vw;
+    height:35vw;
+}
+
+
+@media screen and (max-width: 550px) {
+    .sport__header-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .sport__header-animation,
+    .sport__header-animation img{
+        width:100%;
+        height:100%
+    }
+
+    .sport__header-description{
+        width:100%;
+    }
 }
